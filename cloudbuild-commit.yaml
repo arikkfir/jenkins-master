@@ -1,0 +1,8 @@
+timeout: 1200s
+steps:
+
+  - id: build
+    name: gcr.io/cloud-builders/docker
+    args: [build, "--tag=gcr.io/${PROJECT_ID}/jenkins-master:${COMMIT_SHA}", .]
+
+images: ["gcr.io/${PROJECT_ID}/jenkins-master:${COMMIT_SHA}"]
